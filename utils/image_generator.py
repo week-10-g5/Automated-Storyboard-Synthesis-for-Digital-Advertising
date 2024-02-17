@@ -10,14 +10,14 @@ import requests
 from pydantic import HttpUrl
 
 # Configurations
-os.environ["REPLICATE_API_TOKEN"] = "r8_JzCyIuVNcwnEosREvjvsc0FrnwqHaDS2Hadk1"
+os.environ["REPLICATE_API_TOKEN"] = "r8_NHsSIO7qhUz8BvijMTt4kg0cuzR5D6v00dFwm"
 logging.basicConfig(level=logging.INFO)
 
 class ImageGenerater:
     def __init__(self, asset_suggestions: dict) -> None:
         self.asset_suggestions = asset_suggestions
 
-    def generate_images(self, store_location: str ='./images') -> dict:
+    def generate_images(self, store_location: str ='../images') -> dict:
         generated_images = {}
         for frame, elements in self.asset_suggestions.items():
             if frame.startswith('frame'):
@@ -30,8 +30,8 @@ class ImageGenerater:
 
 
     @staticmethod
-    def generate_image(prompt: str, performance_selection: Literal['Speed', 'Quality', 'Extreme Speed'] = "Extreme Speed", 
-                       aspect_ratios_selection: str = "1024*1024", image_seed: int = 1234, sharpness: int = 2) -> Optional[dict]:
+    def generate_image(prompt: str, performance_selection: Literal['Speed', 'Quality', 'Extreme Speed'] = "Quality", 
+                       aspect_ratios_selection: str = "1024*1024", image_seed: int = -1, sharpness: int = 2) -> Optional[dict]:
         """
         Generates an image based on the given prompt and settings.
 
@@ -44,7 +44,7 @@ class ImageGenerater:
         """
         try:
             output = replicate.run(
-                "konieshadow/fooocus-api-anime:a750658f54c4f8bec1c8b0e352ce2666c22f2f919d391688ff4fc16e48b3a28f",
+                "konieshadow/fooocus-api-realistic:612fd74b69e6c030e88f6548848593a1aaabe16a09cb79e6d714718c15f37f47",
                 input={
                     "prompt": prompt,
                     "performance_selection": performance_selection,
