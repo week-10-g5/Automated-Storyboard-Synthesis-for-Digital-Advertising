@@ -1,0 +1,228 @@
+EDA.ipynb
+Fooocus
+Fooocus.ipynb
+README.dataset.txt
+README.roboflow.txt
+Yolo.ipynb
+Yolov7_Training.ipynb
+_preview.png
+clean.ipynb
+cleaned_objects.csv
+image_generation.ipynb
+model.ipynb
+object.csv
+output.csv
+pipeline.ipynb
+position.csv
+text.csv
+wandb
+yolov7
+c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\notebooks\yolov7
+[34m[1mautoanchor: [39m[22mAnalyzing anchors... anchors/target = 3.72, Best Possible Recall (BPR) = 1.0000
+YOLOR  2024-2-16 torch 2.2.0+cu121 CUDA:0 (NVIDIA GeForce GTX 1050, 4095.8125MB)
+Namespace(adam=False, artifact_alias='latest', batch_size=16, bbox_interval=-1, bucket='', cache_images=False, cfg='cfg/training/yolov7.yaml', data='data.yaml', device='0', entity=None, epochs=100, evolve=False, exist_ok=False, freeze=[0], global_rank=-1, hyp='data/hyp.scratch.p5.yaml', image_weights=False, img_size=[640, 640], label_smoothing=0.0, linear_lr=False, local_rank=-1, multi_scale=False, name='yolov7', noautoanchor=False, nosave=False, notest=False, project='runs/train', quad=False, rect=False, resume=False, save_dir='runs\\train\\yolov722', save_period=-1, single_cls=False, sync_bn=False, total_batch_size=16, upload_dataset=False, v5_metric=False, weights="''", workers=8, world_size=1)
+[34m[1mtensorboard: [39m[22mStart with 'tensorboard --logdir runs/train', view at http://localhost:6006/
+[34m[1mhyperparameters: [39m[22mlr0=0.01, lrf=0.1, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=0.05, cls=0.3, cls_pw=1.0, obj=0.7, obj_pw=1.0, iou_t=0.2, anchor_t=4.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.2, scale=0.9, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.15, copy_paste=0.0, paste_in=0.15, loss_ota=1
+wandb: Currently logged in as: itsabel77. Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...
+wandb: \ Waiting for wandb.init()...
+wandb: | Waiting for wandb.init()...
+wandb: Tracking run with wandb version 0.16.3
+wandb: Run data is saved locally in c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\notebooks\yolov7\wandb\run-20240217_214734-9svbae9k
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run yolov722
+wandb:  View project at https://wandb.ai/itsabel77/YOLOR
+wandb:  View run at https://wandb.ai/itsabel77/YOLOR/runs/9svbae9k
+Overriding model.yaml nc=80 with nc=23
+                 from  n    params  module                                  arguments
+  0                -1  1       928  models.common.Conv                      [3, 32, 3, 1]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     36992  models.common.Conv                      [64, 64, 3, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  1      8320  models.common.Conv                      [128, 64, 1, 1]
+  5                -2  1      8320  models.common.Conv                      [128, 64, 1, 1]
+  6                -1  1     36992  models.common.Conv                      [64, 64, 3, 1]
+  7                -1  1     36992  models.common.Conv                      [64, 64, 3, 1]
+  8                -1  1     36992  models.common.Conv                      [64, 64, 3, 1]
+  9                -1  1     36992  models.common.Conv                      [64, 64, 3, 1]
+ 10  [-1, -3, -5, -6]  1         0  models.common.Concat                    [1]
+ 11                -1  1     66048  models.common.Conv                      [256, 256, 1, 1]
+ 12                -1  1         0  models.common.MP                        []
+ 13                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 14                -3  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 16          [-1, -3]  1         0  models.common.Concat                    [1]
+ 17                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 18                -2  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 19                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 20                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 21                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 22                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 23  [-1, -3, -5, -6]  1         0  models.common.Concat                    [1]
+ 24                -1  1    263168  models.common.Conv                      [512, 512, 1, 1]
+ 25                -1  1         0  models.common.MP                        []
+ 26                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 27                -3  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 28                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 29          [-1, -3]  1         0  models.common.Concat                    [1]
+ 30                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 31                -2  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 32                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 33                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 34                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 35                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 36  [-1, -3, -5, -6]  1         0  models.common.Concat                    [1]
+ 37                -1  1   1050624  models.common.Conv                      [1024, 1024, 1, 1]
+ 38                -1  1         0  models.common.MP                        []
+ 39                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]
+ 40                -3  1    525312  models.common.Conv                      [1024, 512, 1, 1]
+ 41                -1  1   2360320  models.common.Conv                      [512, 512, 3, 2]
+ 42          [-1, -3]  1         0  models.common.Concat                    [1]
+ 43                -1  1    262656  models.common.Conv                      [1024, 256, 1, 1]
+ 44                -2  1    262656  models.common.Conv                      [1024, 256, 1, 1]
+ 45                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 46                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 47                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 48                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 49  [-1, -3, -5, -6]  1         0  models.common.Concat                    [1]
+ 50                -1  1   1050624  models.common.Conv                      [1024, 1024, 1, 1]
+ 51                -1  1   7609344  models.common.SPPCSPC                   [1024, 512, 1]
+ 52                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 53                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 54                37  1    262656  models.common.Conv                      [1024, 256, 1, 1]
+ 55          [-1, -2]  1         0  models.common.Concat                    [1]
+ 56                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 57                -2  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 58                -1  1    295168  models.common.Conv                      [256, 128, 3, 1]
+ 59                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 60                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 61                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 62[-1, -2, -3, -4, -5, -6]  1         0  models.common.Concat                    [1]
+ 63                -1  1    262656  models.common.Conv                      [1024, 256, 1, 1]
+ 64                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 65                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 66                24  1     65792  models.common.Conv                      [512, 128, 1, 1]
+ 67          [-1, -2]  1         0  models.common.Concat                    [1]
+ 68                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 69                -2  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 70                -1  1     73856  models.common.Conv                      [128, 64, 3, 1]
+ 71                -1  1     36992  models.common.Conv                      [64, 64, 3, 1]
+ 72                -1  1     36992  models.common.Conv                      [64, 64, 3, 1]
+ 73                -1  1     36992  models.common.Conv                      [64, 64, 3, 1]
+ 74[-1, -2, -3, -4, -5, -6]  1         0  models.common.Concat                    [1]
+ 75                -1  1     65792  models.common.Conv                      [512, 128, 1, 1]
+ 76                -1  1         0  models.common.MP                        []
+ 77                -1  1     16640  models.common.Conv                      [128, 128, 1, 1]
+ 78                -3  1     16640  models.common.Conv                      [128, 128, 1, 1]
+ 79                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 80      [-1, -3, 63]  1         0  models.common.Concat                    [1]
+ 81                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 82                -2  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 83                -1  1    295168  models.common.Conv                      [256, 128, 3, 1]
+ 84                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 85                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 86                -1  1    147712  models.common.Conv                      [128, 128, 3, 1]
+ 87[-1, -2, -3, -4, -5, -6]  1         0  models.common.Concat                    [1]
+ 88                -1  1    262656  models.common.Conv                      [1024, 256, 1, 1]
+ 89                -1  1         0  models.common.MP                        []
+ 90                -1  1     66048  models.common.Conv                      [256, 256, 1, 1]
+ 91                -3  1     66048  models.common.Conv                      [256, 256, 1, 1]
+ 92                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 93      [-1, -3, 51]  1         0  models.common.Concat                    [1]
+ 94                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]
+ 95                -2  1    525312  models.common.Conv                      [1024, 512, 1, 1]
+ 96                -1  1   1180160  models.common.Conv                      [512, 256, 3, 1]
+ 97                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 98                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+ 99                -1  1    590336  models.common.Conv                      [256, 256, 3, 1]
+100[-1, -2, -3, -4, -5, -6]  1         0  models.common.Concat                    [1]
+101                -1  1   1049600  models.common.Conv                      [2048, 512, 1, 1]
+102                75  1    328704  models.common.RepConv                   [128, 256, 3, 1]
+103                88  1   1312768  models.common.RepConv                   [256, 512, 3, 1]
+104               101  1   5246976  models.common.RepConv                   [512, 1024, 3, 1]
+105   [102, 103, 104]  1    152824  models.yolo.IDetect                     [23, [[12, 16, 19, 36, 40, 28], [36, 75, 76, 55, 72, 146], [142, 110, 192, 243, 459, 401]], [256, 512, 1024]]
+c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\functional.py:507: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3550.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Model Summary: 415 layers, 37315224 parameters, 37315224 gradients, 105.5 GFLOPS
+Scaled weight_decay = 0.0005
+Optimizer groups: 95 .bias, 95 conv.weight, 98 other
+[34m[1mtrain: [39m[22mScanning 'train.cache' images and labels... 345 found, 410 missing, 29 empty, 0 corrupted: 100%|██████████| 755/755 [00:00<?, ?it/s]
+[34m[1mtrain: [39m[22mScanning 'train.cache' images and labels... 345 found, 410 missing, 29 empty, 0 corrupted: 100%|██████████| 755/755 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mScanning 'val.cache' images and labels... 39 found, 0 missing, 1 empty, 0 corrupted: 100%|██████████| 39/39 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mScanning 'val.cache' images and labels... 39 found, 0 missing, 1 empty, 0 corrupted: 100%|██████████| 39/39 [00:00<?, ?it/s]
+Image sizes 640 train, 640 test
+Using 8 dataloader workers
+Logging results to runs\train\yolov722
+Starting training for 100 epochs...
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+  0%|          | 0/34 [00:00<?, ?it/s]
+  0%|          | 0/34 [07:19<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 616, in <module>
+    train(hyp, opt, device, tb_writer)
+  File "train.py", line 361, in train
+    pred = model(imgs)  # forward
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\notebooks\yolov7\models\yolo.py", line 599, in forward
+    return self.forward_once(x, profile)  # single-scale inference, train
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\notebooks\yolov7\models\yolo.py", line 625, in forward_once
+    x = m(x)  # run
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\notebooks\yolov7\models\common.py", line 507, in forward
+    return self.act(self.rbr_dense(inputs) + self.rbr_1x1(inputs) + id_out)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 50.00 MiB. GPU 0 has a total capacity of 4.00 GiB of which 0 bytes is free. Of the allocated memory 9.13 GiB is allocated by PyTorch, and 113.22 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+YOLOR  2024-2-16 torch 2.2.0+cu121 CUDA:0 (NVIDIA GeForce GTX 1050, 4095.8125MB)
+Traceback (most recent call last):
+  File "detect.py", line 196, in <module>
+    detect()
+  File "detect.py", line 34, in detect
+    model = attempt_load(weights, map_location=device)  # load FP32 model
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\notebooks\yolov7\models\experimental.py", line 253, in attempt_load
+    model.append(ckpt['ema' if ckpt.get('ema') else 'model'].float().fuse().eval())  # FP32 model
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1688, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'Model' object has no attribute 'get'
+Namespace(agnostic_nms=False, augment=False, classes=None, conf_thres=0.25, device='', exist_ok=False, img_size=640, iou_thres=0.45, name='exp', no_trace=False, nosave=False, project='runs/detect', save_conf=False, save_txt=False, source='_preview.png', update=False, view_img=False, weights=['runs/train/yolov722/weights/init.pt'])
+YOLOR  2024-2-16 torch 2.2.0+cu121 CUDA:0 (NVIDIA GeForce GTX 1050, 4095.8125MB)
+Traceback (most recent call last):
+  File "detect.py", line 196, in <module>
+    detect()
+  File "detect.py", line 34, in detect
+    model = attempt_load(weights, map_location=device)  # load FP32 model
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\notebooks\yolov7\models\experimental.py", line 253, in attempt_load
+    model.append(ckpt['ema' if ckpt.get('ema') else 'model'].float().fuse().eval())  # FP32 model
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1688, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'Model' object has no attribute 'get'
+Namespace(agnostic_nms=False, augment=False, classes=None, conf_thres=0.25, device='', exist_ok=False, img_size=640, iou_thres=0.45, name='exp', no_trace=False, nosave=False, project='runs/detect', save_conf=False, save_txt=False, source='_preview.png', update=False, view_img=False, weights=['runs/train/yolov722/weights/init.pt'])
+Namespace(agnostic_nms=False, augment=False, classes=None, conf_thres=0.25, device='', exist_ok=False, img_size=640, iou_thres=0.45, name='exp', no_trace=False, nosave=False, project='runs/detect', save_conf=False, save_txt=False, source='_preview.png', update=False, view_img=False, weights=['init.pt'])
+YOLOR  2024-2-16 torch 2.2.0+cu121 CUDA:0 (NVIDIA GeForce GTX 1050, 4095.8125MB)
+Traceback (most recent call last):
+  File "detect.py", line 196, in <module>
+    detect()
+  File "detect.py", line 34, in detect
+    model = attempt_load(weights, map_location=device)  # load FP32 model
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\notebooks\yolov7\models\experimental.py", line 253, in attempt_load
+    model.append(ckpt['ema' if ckpt.get('ema') else 'model'].float().fuse().eval())  # FP32 model
+  File "c:\Users\Abel\Documents\10 Academy\week-10\Automated-Storyboard-Synthesis-for-Digital-Advertising\.venv\lib\site-packages\torch\nn\modules\module.py", line 1688, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
