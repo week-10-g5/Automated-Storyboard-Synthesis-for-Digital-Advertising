@@ -1,0 +1,52 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.8.17",
+    "heartbeatAt": "2024-02-17T18:46:41.966166",
+    "startedAt": "2024-02-17T18:46:40.064262",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/week-10-g5/Automated-Storyboard-Synthesis-for-Digital-Advertising.git",
+        "commit": "3e54504dc8298de0b58736cbf981b2beab533b87"
+    },
+    "email": "abelbekele.addise@gmail.com",
+    "root": "C:/Users/Abel/Documents/10 Academy/week-10/Automated-Storyboard-Synthesis-for-Digital-Advertising",
+    "host": "Abels-PC",
+    "username": "Abel",
+    "executable": "c:\\Users\\Abel\\Documents\\10 Academy\\week-10\\Automated-Storyboard-Synthesis-for-Digital-Advertising\\.venv\\Scripts\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2808.0,
+        "min": 0.0,
+        "max": 2808.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2808.0,
+            "min": 0.0,
+            "max": 2808.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 929.2046928405762,
+            "used": 887.7064094543457
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1050",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 15.88791275024414
+    }
+}
